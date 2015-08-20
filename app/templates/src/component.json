@@ -1,0 +1,36 @@
+{
+    "vendor": "hudaokeji.com",
+    "archive": "Example",
+    "name": "HelloWorld",
+    "version": "0.0.1",
+    "description": "",
+    "main": "main",
+    "dependencies": {
+        "dojo": "1.9.1"
+    },
+
+    "exports": {
+        "modules": [
+            "App"
+        ],
+        "services": [{
+            "type": "app",
+            "category": "Example",
+            "name": "HelloWorld",
+            "provider": "App"
+        }]
+    },
+
+    "licenses": [{
+        "type": "AFLv2.1",
+        "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L43"
+    }, {
+        "type": "BSD",
+        "url": "http://trac.dojotoolkit.org/browser/dojo/trunk/LICENSE#L13"
+    }],
+
+    "bugs": "http://bugs.dojotoolkit.org/",
+    "keywords": ["JavaScript", "Dojo", "qapp", "HelloWorld"],
+    "homepage": "http://dojotoolkit.org/",
+    "dojoBuild": "profile.js"
+}
