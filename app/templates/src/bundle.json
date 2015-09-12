@@ -1,0 +1,42 @@
+{
+    "vendor": "ihudao.com",
+    "feature": "<%= appname %>",
+    "name": "<%= appname %>",
+    "version": "1.0.0",
+    "description": "",
+
+    "activator": "Activator",
+
+    "dependencies": {
+        "extraCssFiles": [
+            "resources/stylesheets/app.css"
+        ]
+    },
+
+    "exports": {
+        "modules": [
+            "App"
+        ],
+        "services": [{
+            "serviceType": "App",
+            "category": "contents",
+            "name": "<%= appname %>:src",
+            "classModule": "App",
+            "initParams": {
+                "title": "<%= appname %>"
+            }
+        }]
+    },
+
+    "licenses": [{
+        "type": "Commercial",
+        "url": "http://www.hudaokeji.com/license101"
+    }, {
+        "type": "OEM",
+        "url": "http://www.hudaokeji.com/license201"
+    }],
+
+    "bugs": "http://bugs.utilhub.com/",
+    "keywords": ["ihudao", "community", "sns"],
+    "homepage": "http://www.utilhub.com"
+}
