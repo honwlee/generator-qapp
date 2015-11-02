@@ -3,13 +3,12 @@ define([
     "dojo/dom-class",
     "dojo/dom-construct",
     "qscript/lang/Class",
-    "udesktop/system/controls/BaseUi",
-    "udesktop/system/modules/FontAwesome",
+    "udesktop/comctrls/BaseUi",
     "dojo/i18n!../nls/app",
     "dojo/text!../templates/layout.html",
     "qface/controls/container/BorderContainer",
     "qface/controls/container/ContentPane"
-], function(domStyle, domClass, domConstruct, Class, BaseUi, FontAwesome, nlsApp, template) {
+], function(domStyle, domClass, domConstruct, Class, BaseUi, nlsApp, template) {
     return Class.declare({
         "-parent-": BaseUi,
         "-protected-": {

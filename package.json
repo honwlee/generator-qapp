@@ -1,47 +1,40 @@
 {
-  "name": "generator-qapp",
-  "version": "0.1.0",
-  "description": "a generator for create qnet app",
-  "files": [
-    "app",
-    "router"
-  ],
-  "keywords": [
-    "yeoman-generator",
-    "dojo",
-    "qnet",
-    "qface",
-    "qscript",
-    "utilhub",
-    "ihudao",
-    "app",
-    "udesktop"
-  ],
-  "author": {
-    "name": "honwlee",
-    "email": "lihongwang0618@gmail.com",
-    "url": "https://github.com/honwlee"
-  },
-  "scripts": {
-    "test": "mocha"
-  },
-  "main": "app/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/honwlee/generator-qapp.git"
-  },
-  "dependencies": {
-    "yeoman-generator": "~0.18.10"
-  },
-  "devDependencies": {
-    "grunt": "~0.4",
-    "grunt-bump": "^0",
-    "mocha": "*"
-  },
-  "engines": {
-    "node": ">=0.10.32",
-    "npm": ">=1.3.2"
-  },
-  "readmeFilename": "README.md",
-  "licenses": "MIT"
+    "name": "generator-qapp",
+    "version": "0.1.0",
+    "description": "a generator for create qnet app",
+    "files": [
+        "app",
+        "router"
+    ],
+    "keywords": [
+        "utilhub",
+        "ihudao",
+        "qapp",
+        "udesktop"
+    ],
+    "author": {
+        "name": "honwlee",
+        "email": "lihongwang0618@gmail.com",
+        "url": "https://github.com/honwlee"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "main": "app/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/honwlee/generator-qapp.git"
+    },
+    "dependencies": {
+        "yeoman-generator": "~0.18.10"
+    },
+    "devDependencies": {
+        "mocha": "*"
+    },
+    "engines": {
+        "node": ">=0.10.32",
+        "npm": ">=1.3.2"
+    },
+    "readmeFilename": "README.md",
+    "licenses": "MIT"
 }

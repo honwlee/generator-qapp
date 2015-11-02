@@ -1,6 +1,6 @@
 define([
-    "qface/application/Application",
-    "dojo/i18n!./nls/apps",
+    "utilhub/Application",
+    "dojo/i18n!udesktop/system/nls/apps",
     "qscript/lang/Class",<% if(jsLibs) { %>
     "udesktop/services/Bootstrap", <% } %>
     "./controls/Layout"
@@ -19,12 +19,12 @@ define([
                 init: function() {<% if(jsLibs) { %>
                     var self = this;
                     Bootstrap.initLibs(this.jsLibs).then(function() {
-                        self.content = new Layout();
+                        self.content = new Layout({});
                         self.deferred.resolve();
                     });
                     return this.deferred.promise;
                 <% } else { %>
-                   this.content = new Layout();<% } %>
+                   this.content = new Layout({});<% } %>
                 }
             }
         },

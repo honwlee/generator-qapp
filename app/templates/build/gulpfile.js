@@ -1,0 +1,11 @@
+require('./gulp')([
+    'default',
+    'clean',
+    'watch',
+    'html',
+    'json',
+    'sass',
+    'script',
+    'deploy',
+    'sprite'
+]);

@@ -1,6 +1,6 @@
 # generator-qapp
 ---
-[Yeoman](http://yeoman.io) generator
+[Yeoman](http://yeoman.io) generator， using to generator [utilhub(http://utilhub.com) app's base structure
 
 ## Geting Started
 
@@ -9,7 +9,7 @@ $ npm install -g yo
 ```
 
 ```
-$ npm install -g generator-qapp
+$ npm install https://github.com/honwlee/generator-qapp.git
 ```
 
 ```

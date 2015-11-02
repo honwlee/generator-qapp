@@ -1,7 +1,4 @@
 .DS_Store
-.tmp/
-node_modules/
-test/temp/
-dist/
-npm-debug.log
-bower_components/
+node_modules
+app/templates/build/node_modules/*
+app/templates/test/node_modules/*

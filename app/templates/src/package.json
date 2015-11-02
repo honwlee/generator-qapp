@@ -1,12 +1,10 @@
 {
-    "name": "HelloWorld",
-    "version": "0.1",
-    "main": "app",
-    "dependencies": {
-        "dojo": "1.10.0",
-        "dijit": "1.10.0"
+    "dependencies": {},
+    "author": "honwlee",
+    "link": "",
+    "devDependencies": {
+
     },
-    "dojoBuild": "profile.js",
     "licenses": [{
         "type": "BSD",
         "url": "https://github.com/dojo/dojo/blob/master/LICENSE#L13"
