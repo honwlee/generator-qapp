@@ -1,55 +1,41 @@
 define([
     "utilhub/Application",
-    "dojo/i18n!udesktop/system/nls/apps",
-    "qscript/lang/Class",<% if(jsLibs) { %>
-    "udesktop/services/Bootstrap", <% } %>
+    "dojo/i18n!utilhub/front/system/nls/apps",
+    "dojo/text!./data/tasks.json",
     "./controls/Layout"
-], function(Application, nls, Class,<% if(jsLibs) { %> Bootstrap, <% } %> Layout) {
+], function(_App, nlsApps, taskJson, Layout) {
     return Class.declare({
-        "-parent-": Application,
+        "-parent-": _App,
+        "-module-": "Task/App",
         "-protected-": {
-            "-fields-": {<% if (jsLibs) { %>
-                isDeferred: true,<% } %>
-                title: null,<% if(jsLibs) { %>
-                jsLibs: [],<% } %>
-                cssLinks: []
-            },
-
-            "-methods-": {
-                init: function() {<% if(jsLibs) { %>
-                    var self = this;
-                    Bootstrap.initLibs(this.jsLibs).then(function() {
-                        self.content = new Layout({});
-                        self.deferred.resolve();
-                    });
-                    return this.deferred.promise;
-                <% } else { %>
-                   this.content = new Layout({});<% } %>
-                }
+            "-fields-": {
+                winMaxed: false,
+                // width: 800,
+                // height: 500,
+                width: 860,
+                height: 570,
+                title: nlsApps["Task"] || "Task"
             }
         },
 
         "-public-": {
-            "-attributes-": {
-
-            },
-
             "-methods-": {
-                // blockade the app's Interval or some other things
-                blockade: function() {
-
+                init: function(args) {
+                    this.overrided();
+                    self.initWithData(JSON.parse(taskJson));
                 },
-
-                // start app's Interval or some other things
-                unblock: function() {
-
+                initWithData: function(data) {
+                    this.mainLayout = new Layout({
+                        app: this,
+                        memory: data
+                    });
                 }
             }
         },
 
         "-constructor-": {
             initialize: function(args) {
-                this["super"](args);
+                this.overrided(args);
             }
         }
     });

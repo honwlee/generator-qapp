@@ -1,13 +1,18 @@
 {
-    "vendor": "ihudao.com",
-    "feature": "<%= appname %>",
-    "name": "<%= appname %>",
+    "vendor": "utilhub.com",
+    "feature": "tasks",
+    "name": "Task",
     "version": "1.0.0",
     "description": "",
 
     "activator": "Activator",
 
     "dependencies": {
+        "services": [{
+            "alias": "task_srv",
+            "serviceType": "Server",
+            "symbolicName": "system:utilhub.com:task_srv"
+        }],
         "extraCssFiles": [
             "resources/stylesheets/app.css"
         ]
@@ -19,11 +24,11 @@
         ],
         "services": [{
             "serviceType": "App",
-            "category": "contents",
-            "name": "<%= appname %>:src",
+            "category": "personal",
+            "name": "task",
             "classModule": "App",
             "initParams": {
-                "title": "<%= appname %>"
+                "title": "task"
             }
         }]
     },
@@ -37,6 +42,6 @@
     }],
 
     "bugs": "http://bugs.utilhub.com/",
-    "keywords": ["ihudao", "community", "sns"],
+    "keywords": ["utilhub", "community", "sns"],
     "homepage": "http://www.utilhub.com"
 }

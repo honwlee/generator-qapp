@@ -1,4 +1,33 @@
-<div data-dojo-type="qface/controls/container/BorderContainer" style="width:100%;height:100%" data-dojo-props="name:'mainNode'">
-    <div class="leftDesc" data-dojo-type="qface/controls/container/ContentPane" data-dojo-props="region:'left',name:'leftNode'"></div>
-    <div data-dojo-type="qface/controls/container/ContentPane" data-dojo-props="region:'center',name:'contentNode'"></div>
+<div class="${baseClass}">
+    <div class="task-action">
+        <input class="taskTitleInput" type="text" placeholder="${nls.placeholder}" data-dojo-attach-point="taskInputNode" required="required">
+        <i class="globalBtn ${fontAwesome.add}" data-dojo-attach-point="addNode" title="${nls.add}"></i>
+    </div>
+    <!-- <div class="taskDatePicker" data-dojo-attach-point="taskDatePickerNode">
+        From<div data-dojo-attach-point="taskDatePickerNode" data-dojo-type="dijit.form.DateTextBox"></div>
+        <div data-dojo-attach-point="itemStartTimeEditor" data-dojo-type="dijit.form.TimeTextBox"></div>
+        to
+        <div data-dojo-attach-point="itemEndDateEditor" data-dojo-type="dijit.form.DateTextBox"></div>
+        <div data-dojo-attach-point="itemEndTimeEditor" data-dojo-type="dijit.form.TimeTextBox"></div>
+    </div> -->
+    <div class="task-header">
+        <div class="content-header">
+            <span class="${fontAwesome.caretSquareRight}"></span>
+            <span class="header-part1">${nls.remaining}</span>
+            <small class="header-part2" data-dojo-attach-point="remainInfoNode"></small>
+        </div>
+        <div class="content-header">
+            <span class="${fontAwesome.squareCheckBox}"></span>
+            <span class="header-part1">${nls.completed}</span>
+            <small class="header-part2" data-dojo-attach-point="completedInfoNode"></small>
+        </div>
+    </div>
+    <div class="task-center">
+        <div class="task-remain">
+            <ul class="task-content" data-dojo-attach-point="remainContentNode"></ul>
+        </div>
+        <div class="task-complete">
+            <ul class="task-content task-content-complete" data-dojo-attach-point="completedContentNode"></ul>
+        </div>
+    </div>
 </div>

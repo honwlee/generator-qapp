@@ -1,0 +1,142 @@
+@import "compass";
+
+.Task {
+  & * {
+    box-sizing: border-box;
+  }
+  .task-action {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    padding: 6px 10px;
+    border-bottom: 1px solid #ccc;
+    @include border-radius(0);
+
+    .globalBtn {
+      margin-top: 5px;
+      right: 15px;
+    }
+    .taskTitleInput {
+      width: 90%;
+      height: 40px;
+      margin: 0;
+      padding: 16px;
+      border: none;
+      font-size: 14px;
+      background: transparent;
+
+      &:focus {
+        outline-style: none;
+        border-color: rgb(66, 189, 255);
+      }
+    }
+  }
+  .taskDatePicker {
+  }
+  .task-header {
+    display: table;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    table-layout: fixed;
+    line-height: 40px;
+    background: rgba(102,137,100,0.75);
+    .content-header {
+      padding: 0;
+      display: table-cell;
+
+      .header-part1 {
+        font-size: 18px;
+      }
+      .header-part2 {
+        font-size: 65%;
+      }
+    }
+  }
+  .task-center {
+    position: absolute;
+    top: 140px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;
+    // border-top: 1px solid #ccc;
+
+    %divide {
+      width: 50%;
+      padding: 15px;
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      background: #fff;
+    }
+    .task-remain {
+      @extend %divide;
+    }
+    .task-complete {
+      @extend %divide;
+      right: 0;
+      border-left: #ddd 1px solid;
+    }
+    .task-content {
+      list-style: none;
+      padding: 0;
+      max-width: 80%;
+      margin: 0 auto;
+
+      li {
+        position: relative;
+        height: auto;
+        cursor: pointer;
+        background: #fff;
+        padding: 18px 16px 18px 12px;
+        border-bottom: 1px dashed #bfbfbf;
+        @include transition(background 0.3s, box-shadow 0.3s);
+
+        &:hover {
+          border-bottom: 1px solid #cbcbcb;
+          box-shadow: none;
+        }
+        a {
+          text-decoration: none;
+        }
+        a i {
+          color: #999;
+        }
+        a i:hover {
+          @include opacity(.8);
+          cursor: pointer;
+        }
+      }
+      p {
+        overflow: hidden;        /* word-wrap: break-word;
+                */
+        word-break: break-all;
+        padding-right: 40px;
+        margin: 0;
+      }
+      .action {
+        display: none;
+        position: absolute;
+        right: 10px;
+        top: 20px;
+        font-size: 16px;
+
+        .delete {
+          padding-right: 5px;
+        }
+      }
+      .active {
+        display: block;
+      }
+    }
+    .task-content-complete {
+      li p {
+        text-decoration: line-through;
+        @include opacity(.6);
+      }
+    }
+  }
+}

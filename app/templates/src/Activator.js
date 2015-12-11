@@ -3,7 +3,6 @@ define([
     "utilhub/osgi/IBundleActivator",
     "utilhub/osgi/BundleContext"
 ], function(Class, IBundleActivator, BundleContext) {
-
     var Activator = Class.declare({
         "-parent-": Class,
         "-interfaces-": [IBundleActivator],
@@ -11,8 +10,11 @@ define([
             "-fields-": {
                 "_": {}
             },
-            "-methods-": {}
+            "-methods-": {
+
+            }
         },
+
         "-public-": {
             "-attributes-": {},
             "-methods-": {
