@@ -19,24 +19,14 @@ server.route({
     method: 'GET',
     path: '/',
     handler: function(request, reply) {
-        console.log("home started");
-        var index = mode === "prod" ? "index.prod.html" : "index.dev.html";
-        reply.file(index);
-    }
-});
-
-server.route({
-    method: 'GET',
-    path: '/index.html',
-    handler: function(request, reply) {
-        console.log("home started");
-        reply.file('index.html');
+        mode = mode.toString() === "" ? "dev" : mode;
+        reply.file("index."+ mode + ".html");
     }
 });
 
 server.route({
     method: "GET",
-    path: '/products/ihudao.com/contents/1.0.0/Microblog/{path*}',
+    path: '/bundle/{path*}',
     handler: {
         directory: {
             path: "../src",
@@ -45,5 +35,6 @@ server.route({
         }
     }
 });
-console.log("The unit test server is started in http://localhost:9000");
+
+console.log("The unit test server is started in http://localhost:9001");
 server.start();

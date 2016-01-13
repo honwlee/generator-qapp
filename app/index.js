@@ -22,7 +22,7 @@ var QappGenerator = yeoman.generators.Base.extend({
         var prompts = [{
             name: 'appname',
             message: 'What the name of your app?',
-            'default': 'Welcome'
+            'default': 'Task'
         }, {
             type: 'confirm',
             name: 'jsLibs',
@@ -49,7 +49,7 @@ var QappGenerator = yeoman.generators.Base.extend({
     projectfiles: function() {
         this.template('_.gitignore', this.appname + '/.gitignore');
         this.template('_LICENSE', this.appname + '/LICENSE');
-        this.template('_README', this.appname + '/README');
+        this.template('_README.md', this.appname + '/README.md');
     }
 });
 module.exports = QappGenerator;
