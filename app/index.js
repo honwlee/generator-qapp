@@ -22,18 +22,12 @@ var QappGenerator = yeoman.generators.Base.extend({
         var prompts = [{
             name: 'appname',
             message: 'What the name of your app?',
-            'default': 'Task'
-        }, {
-            type: 'confirm',
-            name: 'jsLibs',
-            message: 'Include other js libs?',
-            'default': false
+            'default': 'Welcome'
         }];
 
         this.prompt(prompts, function(props) {
             this.appname = props.appname;
             this.appnameClass = this.appname.charAt(0).toLowerCase() + this.appname.slice(1);
-            this.jsLibs = props.jsLibs;
             cb();
         }.bind(this));
     },
