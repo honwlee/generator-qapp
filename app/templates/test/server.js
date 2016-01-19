@@ -36,5 +36,5 @@ server.route({
     }
 });
 
-console.log("The unit test server is started in http://localhost:9001");
+console.log("The unit test server is started in http://localhost:9000");
 server.start();

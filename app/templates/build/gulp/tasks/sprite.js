@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     util = require('../utils');
 
 
-var src = util.assetSrc + 'resources/images/album*.png';
+var src = util.assetSrc + 'resources/images/*.png';
 
 var dstImg = util.assetDest + 'img';
 var dstCss = util.assetDest + 'css';

@@ -8,11 +8,7 @@
     "activator": "Activator",
 
     "dependencies": {
-        "services": [{
-            "alias": "task_srv",
-            "serviceType": "Server",
-            "symbolicName": "system:utilhub.com:task_srv"
-        }],
+        "services": [],
         "extraCssFiles": [
             "resources/stylesheets/app.css"
         ]

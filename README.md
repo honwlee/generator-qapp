@@ -41,7 +41,8 @@ $ gulp script // build js
 $ gulp sprite // add sprite
 $ gulp watch // watch file
 ```
+
 ## License
 
-MIT
+Released under the [MIT](http://opensource.org/licenses/MIT)
 
