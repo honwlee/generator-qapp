@@ -14,7 +14,7 @@ define([
 
         "-public-": {
             "-methods-": {
-                init: function(args) {
+                prepare: function(args) {
                     this.overrided();
                     this.mainLayout = new Layout({
                         app: this
