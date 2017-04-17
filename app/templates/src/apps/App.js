@@ -1,6 +1,6 @@
 define([
-    "utilhub/Application",
-    "./controls/Layout"
+    "utilhub/front/apps/App",
+    "../controls/Layout"
 ], function(_App, Layout) {
     return Class.declare({
         "-parent-": _App,
@@ -16,9 +16,7 @@ define([
             "-methods-": {
                 prepare: function(args) {
                     this.overrided();
-                    this.mainLayout = new Layout({
-                        app: this
-                    });
+                    this.content = new Layout();
                 }
             }
         },

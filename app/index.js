@@ -11,8 +11,6 @@ var QappGenerator = yeoman.generators.Base.extend({
                 skipInstall: options['skip-install']
             });
         });
-
-        this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
     },
 
     askFor: function() {
@@ -20,30 +18,40 @@ var QappGenerator = yeoman.generators.Base.extend({
             _ = this._;
 
         var prompts = [{
-            name: 'appname',
+            name: 'appName',
             message: 'What the name of your app?',
             'default': 'Welcome'
+        }, {
+            name: "services",
+            message: 'need services?(Y OR N)',
+            'default': 'N'
         }];
 
-        this.prompt(prompts, function(props) {
-            this.appname = props.appname;
-            this.appnameClass = this.appname.charAt(0).toLowerCase() + this.appname.slice(1);
+        this.prompt(prompts, function(answers) {
+            this.appName = answers.appName;
+            this.needServices = answers.services === "Y" || answers.services === "y";
+            this.lowAppName = this.appName.charAt(0).toLowerCase() + this.appName.slice(1);
             cb();
         }.bind(this));
     },
 
     app: function() {
-        this.mkdir(this.appname);
-        this.mkdir(this.appname + '/dist');
-        this.directory('src', this.appname + '/src');
-        this.directory('test', this.appname + '/test');
-        this.directory('build', this.appname + '/build');
+        this.mkdir(this.appName);
+        this.mkdir(this.appName + '/dist');
+        this.directory('src', this.appName + '/src');
+        this.directory('test', this.appName + '/test');
+        this.directory('build', this.appName + '/build');
+        if (this.needServices) {
+            this.mkdir(this.appName + '/src/services');
+            this.mkdir(this.appName + '/src/data');
+        }
+        this.mkdir(this.appName + '/src/lib');
     },
 
     projectfiles: function() {
-        this.template('_.gitignore', this.appname + '/.gitignore');
-        this.template('_LICENSE', this.appname + '/LICENSE');
-        this.template('_README.md', this.appname + '/README.md');
+        this.template('_.gitignore', this.appName + '/.gitignore');
+        this.template('_LICENSE', this.appName + '/LICENSE');
+        this.template('_README.md', this.appName + '/README.md');
     }
 });
 module.exports = QappGenerator;

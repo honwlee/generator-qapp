@@ -13,7 +13,7 @@ components server: [http://center.utilhub.dt.hudaokeji.com](http://center.utilhu
 ## Init
 
 ```
-$ cd ./build; npm install; cd ..;
+$ cd ./build; npm install; cd ..;（gulp sass）
 $ cd ./test; npm install; cd ..;
 $ cd ./src/lib; bower install; cd ../..;
 ```

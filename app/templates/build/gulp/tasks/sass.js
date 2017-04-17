@@ -9,10 +9,11 @@ var gulp = require('gulp'),
     onError = require('../utils/handleErrors'),
     util = require('../utils');
 
-
+var loadPath = gutil.env.loadPath ? [gutil.env.loadPath] : [];
+    gutil.log("loadPath is " + loadPath.join(" , "));
 var src = util.assetSrc + 'resources/stylesheets/sass/**/*.scss';
 
-var dists = [util.assetDest + 'stylesheets', util.assetSrc + 'resources/stylesheets'];
+var dists = [util.assetDest + 'resources/stylesheets', util.assetSrc + 'resources/stylesheets'];
 
 var apConfig = {
     browsers: ['last 2 versions'],
@@ -23,6 +24,7 @@ module.exports = function() {
     var sassData = sass(src, {
             style: 'expanded',
             // style: 'compressed',
+            loadPath: loadPath,
             compass: true,
             sourcemap: true
         }).pipe(util.isProd() ? sourceMaps.init() : gutil.noop())

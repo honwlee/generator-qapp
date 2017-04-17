@@ -3,11 +3,11 @@ var gutil = require('gulp-util'),
     del = require('del'),
     util = require('../utils');
 var src = util.assetDest + "**/*",
-    cat = util.bundle.exports.services.filter(function(s) {
+    cat = util.bundle.exports.apps.filter(function(s) {
         return s.serviceType === "App";
     })[0].category,
-    dist = gutil.env.path + util.bundle.vendor + "/" + cat + "/" + util.bundle.version,
-    distWithName = dist + "/" + util.bundle.name;
+    dist = gutil.env.path + util.bundle.vendor + "/" + cat,
+    distWithName = dist + "/" + util.bundle.name + "/" + util.bundle.version;
 module.exports = function() {
     // delete bak folder
     del.sync([distWithName + ".bak"], {

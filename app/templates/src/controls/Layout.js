@@ -1,23 +1,44 @@
 define([
-    "qfacex/dijit/ITemplated",
-    "utilhub/ItemsControl",
     "qscript/lang/Class",
-    "dojo/text!../templates/layout.html",
-    "dojo/i18n!../nls/app"
-], function(ITemplated, ItemsControl, Class,
-    template, nlsApp) {
+    "qfacex/dijit/container/ContentPane",
+    "utilhub/front/comctrls/ExplorerBench",
+    "i18n!../nls/app"
+], function(Class, ContentPane, ExplorerBench, nlsApp) {
     var Layout = Class.declare({
-        "-parent-": ItemsControl,
-        "-interfaces-": [ITemplated],
+        "-parent-": ExplorerBench,
+        "-interfaces-": [],
         "-protected-": {
             "-fields-": {
-                templateString: template,
-                baseClass: "example",
+                baseClass: "welcome",
                 nls: nlsApp
             },
 
             "-methods-": {
-                init: function() {
+                composite: function() {
+                   this.header = new ContentPane({
+                      content: "<div class=\"text\">this is header pane with height 60px</div>",
+                      class: "header"
+                   });
+
+                   this.footer = new ContentPane({
+                      content: "<div class=\"text\">this is footer pane with height 60px</div>",
+                      class: "footer"
+                   });
+
+                   this.navbar = new ContentPane({
+                      content: "<div class=\"text\">this is navbar pane with width 200px</div>",
+                      class: "navbar"
+                   });
+
+                   this.mainPane = new ContentPane({
+                      content: "<div class=\"text\">" + nlsApp.welcome + "</div>",
+                      class: "main"
+                   });
+
+                   this.detailsPane = new ContentPane({
+                      content: "<div class=\"text\">this is details pane with width 200px</div>",
+                      class: "details"
+                   });
 
                 }
             }
@@ -28,13 +49,6 @@ define([
 
             "-methods-": {
 
-            }
-        },
-
-        "-constructor-": {
-            initialize: function(params, srcNodeRef) {
-                this.overrided(params, srcNodeRef);
-                this.init();
             }
         }
     });

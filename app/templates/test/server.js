@@ -1,26 +1,20 @@
 var handlebars = require("handlebars");
 var Hapi = require("hapi");
-var mode = process.argv.slice(2);
-
-var server = Hapi.createServer('0.0.0.0', 9000, {
-    views: {
-        path: __dirname,
-        engines: {
-            'html': {
-                module: handlebars
-            },
-        },
-        layout: true
-    },
-    cors: true
+var Inert = require('inert');
+var server = new Hapi.Server();
+server.connection({
+    port: 9000,
+    routes: {
+        cors: true
+    }
 });
+server.register(Inert, () => {});
 
 server.route({
     method: 'GET',
     path: '/',
     handler: function(request, reply) {
-        mode = mode.toString() === "" ? "dev" : mode;
-        reply.file("index."+ mode + ".html");
+        reply.file("index.html");
     }
 });
 

@@ -1,7 +1,7 @@
 {
     "vendor": "utilhub.com",
-    "feature": "tasks",
-    "name": "Task",
+    "feature": "system",
+    "name": "<%= appName %>",
     "version": "1.0.0",
     "description": "",
 
@@ -15,16 +15,13 @@
     },
 
     "exports": {
-        "modules": [
-            "App"
-        ],
-        "services": [{
+        "apps": [{
             "serviceType": "App",
-            "category": "personal",
-            "name": "task",
-            "classModule": "App",
+            "category": "system",
+            "name": "<%= lowAppName %>",
+            "classModule": "./apps/App",
             "initParams": {
-                "title": "task"
+                "title": ""
             }
         }]
     },
